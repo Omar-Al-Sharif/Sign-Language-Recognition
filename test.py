@@ -102,11 +102,11 @@ print("done")
 # bgr_input = [cv2.cvtColor(s_input,cv2.COLOR_RGB2BGR) for s_input in sample_input]
 # #hsv_input = [cv2.cvtColor(b_input,cv2.COLOR_BGR2HSV) for b_input in bgr_input]
 
-resized_input = [cv2.resize(s_input,(200,200), interpolation= cv2.INTER_AREA) for s_input in sample_input]
+resized_input = [cv2.resize(s_input,(320,200), interpolation= cv2.INTER_AREA) for s_input in sample_input]
 
-blurred_input = [ cv2.medianBlur(r_input,5) for r_input in resized_input]
+# blurred_input = [ cv2.medianBlur(r_input,5) for r_input in resized_input]
 
-gray_input = [cv2.cvtColor(b_input,cv2.COLOR_BGR2GRAY) for b_input in blurred_input]
+# gray_input = [cv2.cvtColor(b_input,cv2.COLOR_BGR2GRAY) for b_input in blurred_input]
 
 
 
@@ -115,14 +115,14 @@ light_skin = np.array([7, 50, 50],np.uint8)
 dark_skin = np.array([15, 255, 255],np.uint8)
 X_processed = []
 
-# for i in range(len(sample_input)):
-#     img = sample_input[i]
-#     img = cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
-#     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-#     blurred_input = cv2.medianBlur(gray,5)
-#     X_processed.append(blurred_input)
-    
-# X_processed = np.array(X_processed)
+for i in range(len(resized_input)):
+    img = resized_input[i]
+    img = cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX, cv2.CV_8U)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    blurred_input = cv2.medianBlur(gray,5)
+    X_processed.append(blurred_input)
+
+X_processed = np.array(X_processed)
 print("done2")
 
 # for i in range(0,len(X_train_processed)):
@@ -133,8 +133,8 @@ print("done2")
 feature_descriptor = []
 hog_imgs = []
 
-for i in range(0,len(gray_input)):
-    feature_descriptor_i = hog(gray_input[i], orientations=9, pixels_per_cell=(8, 8),
+for i in range(0,len(X_processed)):
+    feature_descriptor_i = hog(X_processed[i], orientations=9, pixels_per_cell=(8, 8),
                 	cells_per_block=(2, 2), visualize=False)
     feature_descriptor.append(feature_descriptor_i)
 
