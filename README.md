@@ -1,17 +1,30 @@
-👋 Welcome to the Hand Gesture Recognition System Project!
+## 📋 Project Overview 
 
-🤖 The goal of this project is to implement a system that can recognize hand gestures and classify them into one of six digits (0-5).
+- 👋 Welcome to the Hand Gesture Recognition System Project!
 
-💡 To achieve this, we implemented a complete machine learning pipeline with modules such as preprocessing, feature extraction/selection, model selection and training, and performance analysis.
+- 🤖 The goal of this project is to implement a system that can recognize hand gestures and classify them into one of six digits (0-5).
 
-📚 In order to improve the accuracy of our results, we researched the topic extensively and read research papers related to hand gesture recognition.
+- 💡 To achieve this, we implemented a complete machine learning pipeline with modules of preprocessing, feature extraction/selection, model selection and training, and performance analysis.
 
-💻 We used the Hand Gesture of the Colombian sign language dataset, which can be downloaded from the link provided.
+- 📚 In order to improve the accuracy of our results, we researched the topic extensively and read research papers related to hand gesture recognition.
 
-👥 For this project, we only considered the digit classes (0-5) for both men and women datasets.
+- 💻 We used the Hand Gesture of the Colombian sign language dataset, which can be downloaded from the link provided.
 
-📊 To evaluate our models, we divided the dataset into training, validation, and test sets.
+- 👥 For this project, we only considered the digit classes (0-5) for both men and women datasets.
 
-🧐 While we are free to use any approach or technique we find appropriate for the problem, we used classical machine learning methods such as support vector machines, KNNs, random forest.
+- 📊 To evaluate our models, we divided the dataset into training, validation, and test sets.
 
-🔍 Let's get started and see what combination of techniques will yield the best results!
+- 🧐 While we are free to use any approach or technique we find appropriate for the problem, we used classical machine learning methods such as support vector machines, KNNs, and random forest.
+
+- 🔍 Let's get started and see what combination of techniques will yield the best results!
+
+## 💻 Usage 
+
+1. Install the required libraries by running 
+```bash
+pip install -r requirements.txt
+```
+2. Open `project.ipynb` and run `Discussion BLock`
+
+
+
